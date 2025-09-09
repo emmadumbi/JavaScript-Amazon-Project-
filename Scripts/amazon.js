@@ -1,4 +1,5 @@
 const productsContainer = document.querySelector(".products-grid");
+const cartQuantityText = document.querySelector(".js-cart-quantity");
 
 let productHtml = "";
 products.forEach((product) => {
@@ -47,10 +48,41 @@ products.forEach((product) => {
             Added
           </div>
 
-          <button class="add-to-cart-button button-primary">
-            Add to Cart
+          <button data-product-name="${product.name}" class="add-to-cart-button button-primary">
+            Add to cart
           </button>
         </div>
   `
 });
 productsContainer.innerHTML = productHtml;
+const addTocartBtn = document.querySelectorAll(".add-to-cart-button");
+
+addTocartBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const product = btn.dataset.productName;
+    let matchingItem;
+    cart.forEach((item) => {
+      if (product === item.productName) {
+        matchingItem = item;
+      };
+    });
+    
+    if (matchingItem) {
+      matchingItem.quantity++;
+    } else {
+      cart.push({
+        productName: product,
+        quantity: 1
+      });
+    };
+    
+    let cartQuantity = 0;
+    cart.forEach((item)=>{
+      cartQuantity += item.quantity;
+    });
+    
+    cartQuantityText.textContent = cartQuantity;
+    console.log(cartQuantity);
+    console.log(cart)
+  });
+});
