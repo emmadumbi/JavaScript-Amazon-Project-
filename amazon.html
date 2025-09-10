@@ -17,21 +17,21 @@
 </head>
 
 <body>
-  <div class="amazon-header">
-    <div class="amazon-header-left-section">
+  <header class="amazon-header">
+    <section class="amazon-header-left-section">
       <a href="amazon.html" class="header-link">
         <img class="amazon-logo" src="images/amazon-logo-white.png">
         <img class="amazon-mobile-logo" src="images/amazon-mobile-logo-white.png">
       </a>
-    </div>
+    </section>
     
-    <div class="amazon-header-middle-section">
+    <section class="amazon-header-middle-section">
       <input class="search-bar" type="text" placeholder="Search">
       
       <button class="search-button">
         <img class="search-icon" src="images/icons/search-icon.png">
       </button>
-    </div>
+    </section>
     
     <div class="amazon-header-right-section">
       <a class="orders-link header-link" href="orders.html">
@@ -45,15 +45,12 @@
         <div class="cart-text">Cart</div>
       </a>
     </div>
-  </div>
-  
+  </header>
   <div class="main">
     <div class="products-grid">
     </div>
   </div>
-  <script src="Scripts/Cart.js"></script>
-  <script src="data/products.js"></script>
-  <script src="Scripts/amazon.js"></script>
+  
+  <script type="module" src="Scripts/amazon.js"></script>
 </body>
-
 </html>
