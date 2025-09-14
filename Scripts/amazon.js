@@ -69,7 +69,6 @@ function updateCartQuantity() {
   });
   cartQuantityText.textContent = cartQuantity;
 };
-
 updateCartQuantity();
 
 document.querySelectorAll(".add-to-cart-button").forEach((btn) => {
