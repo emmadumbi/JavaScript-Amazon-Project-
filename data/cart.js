@@ -25,14 +25,13 @@ export function addToCart(productId, quantity) {
   });
   
   if (matchingItem) {
-    matchingItem.quantity++;
+    matchingItem.quantity += quantity;
   } else {
     cart.push({
       productId,
       quantity
     });
   };
-  
   saveToLocalStorage();
 };
 
@@ -41,7 +40,6 @@ export function calculateCartQuantity() {
   cart.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
   });
-  return cartQuantity;
 };
 
 export function removeCartItem(productId) {
