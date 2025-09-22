@@ -1,3 +1,5 @@
+import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+
 export const deliveryOptions = [{
   id: '1',
   deliveryDay: 7,
@@ -26,5 +28,30 @@ export function getDeliveryOption(cartItem) {
     };
   });
   
-  return matchingItem.priceCent;
-}
+  return matchingItem;
+};
+
+/*export function calculateDeliveryDate(param) {
+  const today = dayjs();
+  
+  const deliveryDate = today.add(param.deliveryDay, 'days');
+  
+  const dateText = deliveryDate.format('dddd, MMMM D');
+  
+  return dateText;
+}*/
+export function calculateDeliveryDate(daysToAdd) {
+  let date = dayjs();
+  let added = 0;
+  
+  while (added < daysToAdd) {
+    date = date.add(1, "day");
+    const dayOfWeek = date.day();
+    
+    if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+      added++;
+    }
+    
+  };
+  return date.format('dddd, MMMM YYYY');
+};

@@ -18,8 +18,7 @@ export function renderPaymentSummary() {
     
     const matchingDeliveryItem = getDeliveryOption(cartItem);
     
-    shippingPrice += matchingDeliveryItem;
-    
+    shippingPrice += matchingDeliveryItem.priceCent;
   });
   
   const totalBeforeTax = priceQuantity + shippingPrice;
