@@ -82,7 +82,7 @@ document.querySelectorAll(".add-to-cart-button").forEach((btn) => {
     
     addedText.classList.add('show-added-to-cart');
     
-    setTimeout(()=>{
+    setTimeout(() => {
       addedText.classList.remove('show-added-to-cart');
     }, 2000)
     
@@ -90,3 +90,13 @@ document.querySelectorAll(".add-to-cart-button").forEach((btn) => {
     updateCartQuantity();
   });
 });
+
+// Example function
+function add(a, b) {
+  return a + b;
+}
+
+// Example function
+function multiply(a, b) {
+  return a * b;
+}
