@@ -91,12 +91,3 @@ document.querySelectorAll(".add-to-cart-button").forEach((btn) => {
   });
 });
 
-// Example function
-function add(a, b) {
-  return a + b;
-}
-
-// Example function
-function multiply(a, b) {
-  return a * b;
-}

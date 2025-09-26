@@ -1,5 +1,5 @@
 import { add, multiply } from './app.js';
-//import { formatCurrency } from './Scripts/utils/money.js';
+import { formatCurrency } from '../Scripts/utils/money.js';
 
 describe("Math Functions", () => {
   it("should add two numbers correctly", () => {
@@ -10,9 +10,11 @@ describe("Math Functions", () => {
     expect(multiply(4, 5)).toBe(20);
   });
   
-  /*it('should format price', () => {
-    expect(formatCurrency(2095)).toBe(20.95);
-  });*/
+  describe('convert cent to dollar', () => {
+    it('should format price', () => {
+      expect(formatCurrency(2095)).toBe('20.95');
+    });
+  });
 });
 
 /*describe('format currency function', () => {
