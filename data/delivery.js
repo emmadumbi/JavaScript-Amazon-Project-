@@ -53,5 +53,5 @@ export function calculateDeliveryDate(daysToAdd) {
     }
     
   };
-  return date.format('dddd, MMMM YYYY');
+  return date.format('dddd (DD), MMMM YYYY');
 };

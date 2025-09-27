@@ -1,8 +1,7 @@
-import {calculateCartQuantity} from '../../data/cart.js';
-
+import personalCart from '../../data/cart-class.js'
 
 export function renderCheckoutHeader(){
-  const cartQuantity = calculateCartQuantity();
+  const cartQuantity = personalCart.calculateCartQuantity();
   let header = '';
   
   const itemText = cartQuantity > 1 ? 'items' : 'item'
